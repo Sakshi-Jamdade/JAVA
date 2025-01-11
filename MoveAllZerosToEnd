@@ -1,0 +1,32 @@
+class Solution 
+{
+    void pushZerosToEnd(int[] arr) 
+    {
+        int n=arr.length;
+        int index=0;
+        
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i] != 0)
+            {
+                arr[index]=arr[i];
+                index++;
+            }
+        }
+        while(index < n)
+        {
+            arr[index]=0;
+            index++;
+        }
+    }
+}
+
+// 1-> Array Size In n;
+// 2-> index=0;
+// 3-> Iterate Over Array
+//     if(arr[i] != 0)
+//        Store it at index 0;
+//        then index++;
+// 4-> upto index < array size i.e n
+//     arr[index] = 0;
+//        index++;
