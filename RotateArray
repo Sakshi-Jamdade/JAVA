@@ -1,0 +1,41 @@
+class RotateArray 
+{
+    // Function to rotate an array by 'd' elements in a counter-clockwise direction.
+    static void rotateArr(int arr[], int d) 
+    {
+        int n = arr.length;   // Get the length of the array.
+        
+        // To handle cases where d > n, take the modulus of d with n.
+        d = d % n;
+        
+        // Step 1: Reverse the portion of the array from index d to n-1.
+        reverse(d, n - 1, arr);
+        
+        // Step 2: Reverse the portion of the array from index 0 to d-1.
+        reverse(0, d - 1, arr);
+        
+        // Step 3: Reverse the entire array from index 0 to n-1.
+        reverse(0, n - 1, arr);
+    }
+
+    // Helper function to reverse a portion of the array in place.
+    // Parameters:
+    // start - Starting index of the portion to reverse.
+    // end - Ending index of the portion to reverse.
+    // arr - The array to be modified.
+    static void reverse(int start, int end, int arr[])
+    {
+        // Swap elements at 'start' and 'end' indices until they meet or cross.
+        while (start <= end)
+        {
+            // Swap the elements at indices 'start' and 'end'.
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            
+            // Move the 'start' pointer forward and the 'end' pointer backward.
+            start++;
+            end--;
+        }
+    }
+}
