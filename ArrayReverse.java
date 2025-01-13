@@ -1,4 +1,4 @@
-class Solution 
+class ArrayReverse 
 {
     public void reverseArray(int arr[]) 
     {
